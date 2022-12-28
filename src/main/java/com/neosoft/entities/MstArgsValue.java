@@ -1,33 +1,28 @@
 package com.neosoft.entities;
 
+
 import lombok.*;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+
 
 @Getter
 @Setter
-@ToString
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@ToString
 @Entity
-public class Status {
+public class MstArgsValue {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
 
-    @Column(unique = true)
     private String name;
 
-
-    private String description;
-
-
-    private LocalDateTime createdOn;
+    @ManyToOne
+    @JoinColumn(name = "id")
+    private ArgsArgsValue argsArgsValue;
 
 
-    private String createdBy;
 }
-

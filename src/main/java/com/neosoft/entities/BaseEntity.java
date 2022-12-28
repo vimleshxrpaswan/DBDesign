@@ -2,7 +2,8 @@ package com.neosoft.entities;
 
 import lombok.*;
 
-import javax.persistence.Entity;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToOne;
 import java.time.LocalDateTime;
 
 @Getter
@@ -10,10 +11,10 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Entity
+@MappedSuperclass
 public class BaseEntity {
 
-
+    @OneToOne
     private Status status;
 
 
